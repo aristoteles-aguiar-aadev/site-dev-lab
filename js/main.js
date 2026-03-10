@@ -1,5 +1,16 @@
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
+const logoTop = document.getElementById('logoTop');
+
+if (logoTop) {
+    logoTop.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', () => {
