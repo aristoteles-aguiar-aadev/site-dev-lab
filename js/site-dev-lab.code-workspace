@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../ct-vieira-brothers"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "site-dev-lab"
+	}
+}
