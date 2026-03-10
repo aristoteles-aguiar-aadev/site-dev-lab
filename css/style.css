@@ -468,6 +468,62 @@ nav a:hover {
 .testimonial-card small {
   color: #64748b;
 }
+.testimonial-link {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+
+.testimonial-client {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-logo-wrap {
+  width: 108px;
+  height: 78px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 8px;
+  background: #fff;
+}
+
+.testimonial-client-info strong {
+  display: block;
+  margin: 0;
+}
+
+.testimonial-client-info small {
+  color: #64748b;
+}
+
+.testimonial-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
 
 .plans-section {
   background: var(--bg-soft);
