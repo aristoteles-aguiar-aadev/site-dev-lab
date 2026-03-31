@@ -151,7 +151,7 @@ strong {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-6px);
 }
 
 .btn-primary {
@@ -169,11 +169,7 @@ strong {
 .btn-light {
   background: var(--white);
   color: var(--bg-dark);
-}
-
-.btn-outline-light {
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--white);
+  font-size: 16px;
 }
 
 .site-header {
@@ -652,6 +648,116 @@ nav a:hover {
 .footer p {
   color: #64748b;
   font-size: 0.95rem;
+}
+
+.email-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.email-modal.active {
+  display: block;
+}
+
+.email-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.email-modal__content {
+  position: relative;
+  width: min(92%, 560px);
+  margin: 6vh auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  animation: modalFadeUp 0.25s ease;
+}
+
+.email-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: 0;
+  background: transparent;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  color: #222;
+}
+
+.email-modal__content h3 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  color: #111;
+}
+
+.email-modal__subtitle {
+  margin: 0 0 22px;
+  color: #666;
+  font-size: 0.98rem;
+}
+
+.email-form {
+  display: grid;
+  gap: 16px;
+}
+
+.email-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.email-form__group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.email-form__group input,
+.email-form__group select,
+.email-form__group textarea {
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.email-form__group input:focus,
+.email-form__group select:focus,
+.email-form__group textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.email-form__submit {
+  width: 100%;
+  justify-content: center;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@keyframes modalFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1024px) {

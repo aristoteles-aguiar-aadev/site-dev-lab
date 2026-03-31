@@ -33,3 +33,30 @@ if (menuToggle && mainNav) {
         }
     });
 }
+
+const openEmailModalBtn = document.getElementById("openEmailModal");
+const closeEmailModalBtn = document.getElementById("closeEmailModal");
+const emailModal = document.getElementById("emailModal");
+const emailModalOverlay = document.getElementById("emailModalOverlay");
+
+function openEmailModal() {
+    emailModal.classList.add("active");
+    emailModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+}
+
+function closeEmailModal() {
+    emailModal.classList.remove("active");
+    emailModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+}
+
+openEmailModalBtn.addEventListener("click", openEmailModal);
+closeEmailModalBtn.addEventListener("click", closeEmailModal);
+emailModalOverlay.addEventListener("click", closeEmailModal);
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && emailModal.classList.contains("active")) {
+        closeEmailModal();
+    }
+});

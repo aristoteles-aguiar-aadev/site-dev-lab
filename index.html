@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Dev Lab | Criação de Sites Profissionais</title>
-    <link rel="icon" href="./assets/logo/devlab-ico.png" type="image/svg">
+    <link rel="icon" href="https://devlab-site.vercel.app/assets/logo/devlab-ico.png" type="image/svg">
     <meta name="description"
         content="Criação de sites profissionais, landing pages e sites institucionais. A Dev Lab desenvolve sites rápidos, responsivos, com SEO avançado e foco em geração de leads." />
     <meta name="keywords"
@@ -16,16 +16,16 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#0f172a" />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="canonical" href="https://www.devlab.com.br/" />
+    <link rel="canonical" href="https://devlab-site.vercel.app/" />
 
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dev Lab | Criação de Sites Profissionais" />
     <meta property="og:description"
         content="Sites profissionais, landing pages e páginas de alta conversão para empresas que querem crescer no digital com mais autoridade e geração de leads." />
-    <meta property="og:url" content="https://www.devlab.com.br/" />
+    <meta property="og:url" content="https://devlab-site.vercel.app/" />
     <meta property="og:site_name" content="Dev Lab" />
-    <meta property="og:image" content="https://www.devlab.com.br/assets/img/dev-lab-og.jpg" />
+    <meta property="og:image" content="https://devlab-site.vercel.app/assets/logo/devlab-ico.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Dev Lab - criação de sites profissionais" />
@@ -34,7 +34,7 @@
     <meta name="twitter:title" content="Dev Lab | Criação de Sites Profissionais" />
     <meta name="twitter:description"
         content="A Dev Lab cria sites rápidos, modernos e com SEO avançado para empresas que querem vender mais e fortalecer sua presença digital." />
-    <meta name="twitter:image" content="https://www.devlab.com.br/assets/img/dev-lab-og.jpg" />
+    <meta name="twitter:image" content="https://devlab-site.vercel.app/assets/logo/devlab-ico.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,11 +47,11 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Dev Lab",
-        "url": "https://www.devlab.com.br/",
-        "logo": "https://www.devlab.com.br/assets/img/logo-dev-lab.png",
-        "image": "https://www.devlab.com.br/assets/img/dev-lab-og.jpg",
+        "url": "https://devlab-site.vercel.app/",
+        "logo": "https://devlab-site.vercel.app/assets/logo/devlab-ico.png",
+        "image": "https://devlab-site.vercel.app/assets/logo/devlab-ico.png",
         "description": "A Dev Lab cria sites profissionais, landing pages e páginas institucionais com foco em SEO, performance e conversão.",
-        "telephone": "+55-85-0000-0000",
+        "telephone": "+55-85-98106-6622",
         "email": "contato@devlab.com.br",
         "address": {
           "@type": "PostalAddress",
@@ -482,11 +482,16 @@
                             target="_blank" rel="noopener noreferrer">
                             Chamar no WhatsApp
                         </a>
-                        <a class="btn btn-outline-light" href="mailto:contato@devlab.com.br">Enviar e-mail</a>
+
+                        <button class="btn btn-light" type="button" id="openEmailModal">
+                            Enviar e-mail
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
+
+
     </main>
 
     <footer class="footer">
@@ -502,6 +507,71 @@
     </footer>
 
     <script src="./js/main.js" defer></script>
+
+    <div class="email-modal" id="emailModal" aria-hidden="true">
+        <div class="email-modal__overlay" id="emailModalOverlay"></div>
+
+        <div class="email-modal__content" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
+            <button class="email-modal__close" type="button" id="closeEmailModal" aria-label="Fechar formulário">
+                ×
+            </button>
+
+            <h3 id="emailModalTitle">Solicitar proposta</h3>
+            <p class="email-modal__subtitle">
+                Preencha seus dados e entraremos em contato.
+            </p>
+
+            <form class="email-form" action="https://formsubmit.co/contato@devlab.com.br" method="POST">
+                <input type="hidden" name="_subject" value="Novo contato pelo site Dev Lab" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="https://devlab-site.vercel.app/obrigado.html" />
+
+                <div class="email-form__group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="Nome" placeholder="Seu nome" required />
+                </div>
+
+                <div class="email-form__group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="Empresa" placeholder="Nome da empresa" />
+                </div>
+
+                <div class="email-form__group">
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="text" id="telefone" name="Telefone" placeholder="(85) 99999-9999" required />
+                </div>
+
+                <div class="email-form__group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="Email" placeholder="voce@empresa.com" required />
+                </div>
+
+                <div class="email-form__group">
+                    <label for="servico">Serviço de interesse</label>
+                    <select id="servico" name="Serviço">
+                        <option value="">Selecione</option>
+                        <option value="Criação de site">Criação de site</option>
+                        <option value="Landing page">Landing page</option>
+                        <option value="Sistema web">Sistema web</option>
+                        <option value="Loja virtual">Loja virtual</option>
+                        <option value="SEO">SEO</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="email-form__group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Descreva o que você precisa"
+                        required></textarea>
+                </div>
+
+                <button class="btn btn-primary email-form__submit" type="submit">
+                    Enviar solicitação
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
