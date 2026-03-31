@@ -100,6 +100,132 @@
         ]
       }
     </script>
+
+    <script>
+        const contactModal = document.getElementById("contactModal");
+        const contactModalOverlay = document.getElementById("contactModalOverlay");
+        const openContactModalBtn = document.getElementById("openContactModal");
+        const closeContactModalBtn = document.getElementById("closeContactModal");
+        const contactForm = document.getElementById("contactForm");
+        const contactFormStatus = document.getElementById("contactFormStatus");
+        const contactFormSubmit = document.getElementById("contactFormSubmit");
+        const phoneInput = document.getElementById("phone");
+
+        function openContactModal() {
+            contactModal.classList.add("active");
+            contactModal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+        }
+
+        function closeContactModal() {
+            contactModal.classList.remove("active");
+            contactModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+            clearStatus();
+        }
+
+        function setStatus(message, type) {
+            contactFormStatus.textContent = message;
+            contactFormStatus.className = "contact-form__status";
+            if (type) {
+                contactFormStatus.classList.add(type === "error" ? "is-error" : "is-success");
+            }
+        }
+
+        function clearStatus() {
+            contactFormStatus.textContent = "";
+            contactFormStatus.className = "contact-form__status";
+        }
+
+        function setLoading(isLoading) {
+            contactFormSubmit.disabled = isLoading;
+            contactFormSubmit.textContent = isLoading ? "Enviando..." : "Enviar solicitação";
+        }
+
+        function normalizePayload(form) {
+            const formData = new FormData(form);
+
+            return {
+                name: formData.get("name")?.toString().trim() || "",
+                company: formData.get("company")?.toString().trim() || "",
+                phone: formData.get("phone")?.toString().trim() || "",
+                email: formData.get("email")?.toString().trim() || "",
+                service: formData.get("service")?.toString().trim() || "",
+                message: formData.get("message")?.toString().trim() || "",
+                website: formData.get("website")?.toString().trim() || ""
+            };
+        }
+
+        function applyPhoneMask(value) {
+            const digits = value.replace(/\D/g, "").slice(0, 11);
+
+            if (digits.length <= 10) {
+                return digits
+                    .replace(/^(\d{2})(\d)/g, "($1) $2")
+                    .replace(/(\d{4})(\d)/, "$1-$2");
+            }
+
+            return digits
+                .replace(/^(\d{2})(\d)/g, "($1) $2")
+                .replace(/(\d{5})(\d)/, "$1-$2");
+        }
+
+        if (phoneInput) {
+            phoneInput.addEventListener("input", (event) => {
+                event.target.value = applyPhoneMask(event.target.value);
+            });
+        }
+
+        openContactModalBtn?.addEventListener("click", openContactModal);
+        closeContactModalBtn?.addEventListener("click", closeContactModal);
+        contactModalOverlay?.addEventListener("click", closeContactModal);
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && contactModal.classList.contains("active")) {
+                closeContactModal();
+            }
+        });
+
+        contactForm?.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            clearStatus();
+
+            if (!contactForm.reportValidity()) {
+                return;
+            }
+
+            const payload = normalizePayload(contactForm);
+
+            try {
+                setLoading(true);
+
+                const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok || !result.ok) {
+                    throw new Error(result.message || "Não foi possível enviar sua mensagem.");
+                }
+
+                setStatus("Mensagem enviada com sucesso. Em breve entrarei em contato.", "success");
+                contactForm.reset();
+
+                setTimeout(() => {
+                    closeContactModal();
+                }, 1400);
+            } catch (error) {
+                setStatus(error.message || "Falha ao enviar. Tente novamente em instantes.", "error");
+            } finally {
+                setLoading(false);
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -508,49 +634,58 @@
 
     <script src="./js/main.js" defer></script>
 
-    <div class="email-modal" id="emailModal" aria-hidden="true">
-        <div class="email-modal__overlay" id="emailModalOverlay"></div>
+    <div class="cta-actions">
+        <a class="btn btn-light"
+            href="https://wa.me/5585981066622?text=Olá%20Dev%20Lab,%20quero%20solicitar%20uma%20proposta"
+            target="_blank" rel="noopener noreferrer">
+            Chamar no WhatsApp
+        </a>
 
-        <div class="email-modal__content" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
-            <button class="email-modal__close" type="button" id="closeEmailModal" aria-label="Fechar formulário">
+        <button class="btn btn-outline-light" type="button" id="openContactModal">
+            Enviar e-mail
+        </button>
+    </div>
+
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+        <div class="contact-modal__overlay" id="contactModalOverlay"></div>
+
+        <div class="contact-modal__content" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+            <button class="contact-modal__close" type="button" id="closeContactModal" aria-label="Fechar formulário">
                 ×
             </button>
 
-            <h3 id="emailModalTitle">Solicitar proposta</h3>
-            <p class="email-modal__subtitle">
-                Preencha seus dados e entraremos em contato.
+            <h3 id="contactModalTitle">Solicitar proposta</h3>
+            <p class="contact-modal__subtitle">
+                Preencha os dados e eu recebo tudo no e-mail.
             </p>
 
-            <form class="email-form" action="https://formsubmit.co/ajax/aristoteles.aguiar.developer@gmail.com"
-                method="POST">
-                <input type="hidden" name="_subject" value="Novo contato pelo site Dev Lab" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="website" id="website" autocomplete="off" tabindex="-1"
+                    class="contact-form__honeypot" />
 
-
-                <div class="email-form__group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="Nome" placeholder="Seu nome" required />
+                <div class="contact-form__group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome" required />
                 </div>
 
-                <div class="email-form__group">
-                    <label for="empresa">Empresa</label>
-                    <input type="text" id="empresa" name="Empresa" placeholder="Nome da empresa" />
+                <div class="contact-form__group">
+                    <label for="company">Empresa</label>
+                    <input type="text" id="company" name="company" placeholder="Nome da empresa" />
                 </div>
 
-                <div class="email-form__group">
-                    <label for="telefone">Telefone / WhatsApp</label>
-                    <input type="text" id="telefone" name="Telefone" placeholder="(85) 99999-9999" required />
+                <div class="contact-form__group">
+                    <label for="phone">Telefone / WhatsApp</label>
+                    <input type="text" id="phone" name="phone" placeholder="(85) 99999-9999" required />
                 </div>
 
-                <div class="email-form__group">
+                <div class="contact-form__group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="Email" placeholder="voce@empresa.com" required />
+                    <input type="email" id="email" name="email" placeholder="voce@empresa.com" required />
                 </div>
 
-                <div class="email-form__group">
-                    <label for="servico">Serviço de interesse</label>
-                    <select id="servico" name="Serviço">
+                <div class="contact-form__group">
+                    <label for="service">Serviço de interesse</label>
+                    <select id="service" name="service">
                         <option value="">Selecione</option>
                         <option value="Criação de site">Criação de site</option>
                         <option value="Landing page">Landing page</option>
@@ -561,23 +696,17 @@
                     </select>
                 </div>
 
-                <div class="email-form__group">
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Descreva o que você precisa"
+                <div class="contact-form__group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Descreva o que você precisa"
                         required></textarea>
                 </div>
 
-
-                <button class="btn btn-primary email-form__submit" type="submit">
-                    Enviar solicitação
-                </button>
-
-                <div class="email-form__success" id="formSuccess">
-                    ✓ Recebemos sua mensagem. Logo entraremos em contato.
-                </div>
-
-                <div class="email-form__error" id="formError">
-                    Não foi possível enviar sua mensagem agora. Tente novamente em instantes.
+                <div class="contact-form__footer">
+                    <p class="contact-form__status" id="contactFormStatus"></p>
+                    <button class="btn btn-primary contact-form__submit" id="contactFormSubmit" type="submit">
+                        Enviar solicitação
+                    </button>
                 </div>
             </form>
         </div>

@@ -1,1 +1,12 @@
 .dev_lab_landing_page.html
+.gitignore
+.git
+node_modules
+dist
+build
+.DS_Store
+.env
+.env.local
+.env.development
+.env.test
+.env.production

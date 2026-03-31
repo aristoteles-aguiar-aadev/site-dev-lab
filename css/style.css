@@ -173,10 +173,138 @@ strong {
   font-size: 16px;
 }
 
-#openEmailModal #callWhatsApp a:hover {
-  transform: translateY(-6px);
-  background: var(--text-lima);
+/* FORM Whatsapp e Envia E-mail */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
 }
+
+.contact-modal.active {
+  display: block;
+}
+
+.contact-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(4px);
+}
+
+.contact-modal__content {
+  position: relative;
+  width: min(92%, 580px);
+  margin: 5vh auto;
+  z-index: 2;
+  background: #ffffff;
+  color: #111;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  animation: modalFadeUp 0.25s ease;
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  color: #222;
+}
+
+.contact-modal__subtitle {
+  margin: 0 0 22px;
+  color: #666;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form__group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.contact-form__group input,
+.contact-form__group select,
+.contact-form__group textarea {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  background: #fff;
+}
+
+.contact-form__group input:focus,
+.contact-form__group select:focus,
+.contact-form__group textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+.contact-form__footer {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-form__submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.contact-form__status {
+  min-height: 20px;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-form__status.is-error {
+  color: #b42318;
+}
+
+.contact-form__status.is-success {
+  color: #027a48;
+}
+
+.contact-form__honeypot {
+  display: none;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@keyframes modalFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FORM Whatsapp e Envia E-mail - F I M  */
 
 .site-header {
   position: sticky;

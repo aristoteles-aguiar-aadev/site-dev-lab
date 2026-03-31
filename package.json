@@ -1,0 +1,9 @@
+{
+  "name": "devlab-site",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "resend": "latest",
+    "vercel": "^50.37.3"
+  }
+}
