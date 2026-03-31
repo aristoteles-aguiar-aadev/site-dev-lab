@@ -479,7 +479,7 @@
                     <div class="cta-actions">
                         <a class="btn btn-light"
                             href="https://wa.me/5585981066622?text=Olá%20Dev%20Lab,%20quero%20solicitar%20uma%20proposta"
-                            target="_blank" rel="noopener noreferrer">
+                            id="callWhatsApp" target="_blank" rel="noopener noreferrer">
                             Chamar no WhatsApp
                         </a>
 
@@ -521,11 +521,12 @@
                 Preencha seus dados e entraremos em contato.
             </p>
 
-            <form class="email-form" action="https://formsubmit.co/contato@devlab.com.br" method="POST">
+            <form class="email-form" action="https://formsubmit.co/ajax/aristoteles.aguiar.developer@gmail.com"
+                method="POST">
                 <input type="hidden" name="_subject" value="Novo contato pelo site Dev Lab" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://devlab-site.vercel.app/obrigado.html" />
+
 
                 <div class="email-form__group">
                     <label for="nome">Nome</label>
@@ -566,9 +567,18 @@
                         required></textarea>
                 </div>
 
+
                 <button class="btn btn-primary email-form__submit" type="submit">
                     Enviar solicitação
                 </button>
+
+                <div class="email-form__success" id="formSuccess">
+                    ✓ Recebemos sua mensagem. Logo entraremos em contato.
+                </div>
+
+                <div class="email-form__error" id="formError">
+                    Não foi possível enviar sua mensagem agora. Tente novamente em instantes.
+                </div>
             </form>
         </div>
     </div>

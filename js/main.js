@@ -60,3 +60,47 @@ document.addEventListener("keydown", (event) => {
         closeEmailModal();
     }
 });
+
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const error = document.getElementById('formError');
+    const btn = form?.querySelector('.form-submit');
+
+    if (!form || !success || !error || !btn) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        success.style.display = 'none';
+        error.style.display = 'none';
+
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+
+        try {
+            const formData = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    Accept: 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                form.reset();
+                success.style.display = 'block';
+            } else {
+                error.style.display = 'block';
+            }
+        } catch (err) {
+            error.style.display = 'block';
+        } finally {
+            btn.textContent = 'Enviar Mensagem';
+            btn.disabled = false;
+        }
+    });
+}
+

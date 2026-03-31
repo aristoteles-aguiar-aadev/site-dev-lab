@@ -6,7 +6,7 @@
   --text-soft: #475569;
   --text-light: #94a3b8;
   --text-lima: #73f44c;
-  --text-devlab: #e6ff4b;
+  /* --text-devlab: #e6ff4b; */
   --border: #e2e8f0;
   --white: #ffffff;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
@@ -152,6 +152,7 @@ strong {
 
 .btn:hover {
   transform: translateY(-6px);
+  background: var(--text-soft);
 }
 
 .btn-primary {
@@ -170,6 +171,11 @@ strong {
   background: var(--white);
   color: var(--bg-dark);
   font-size: 16px;
+}
+
+#openEmailModal #callWhatsApp a:hover {
+  transform: translateY(-6px);
+  background: var(--text-lima);
 }
 
 .site-header {
@@ -743,6 +749,31 @@ nav a:hover {
 .email-form__submit {
   width: 100%;
   justify-content: center;
+}
+
+.email-form__success {
+  display: none;
+  background: rgba(0, 180, 0, 0.1);
+  border: 1px solid rgba(0, 180, 0, 0.3);
+  padding: 16px;
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #4dff7c;
+}
+.email-form__error {
+  display: none;
+  background: rgba(209, 0, 0, 0.1);
+  border: 1px solid rgba(209, 0, 0, 0.3);
+  padding: 16px;
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #ff8f8f;
 }
 
 body.modal-open {
