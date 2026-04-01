@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "resend": "latest",
+    "resend": "^4.8.0",
     "vercel": "^50.37.3"
   }
 }

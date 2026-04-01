@@ -174,10 +174,8 @@ if (contactForm) {
             if (contentType.includes("application/json")) {
                 result = await response.json();
             } else {
-                const rawText = await response.text();
-                throw new Error(
-                    rawText || "A rota /api/contact não respondeu em JSON. Verifique se você está usando vercel dev."
-                );
+                const raw = await response.text();
+                throw new Error(raw || "A API não retornou JSON.");
             }
 
             if (!response.ok || !result.ok) {
