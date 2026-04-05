@@ -194,15 +194,15 @@ strong {
 
 .contact-modal__content {
   position: relative;
-  width: min(92%, 580px);
-  margin: 5vh auto;
+  width: min(80%, 480px);
+  margin: 1vh auto;
   z-index: 2;
   background: #ffffff;
   color: #111;
   border-radius: 20px;
-  padding: 28px;
+  padding: 20px;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-  animation: modalFadeUp 0.25s ease;
+  animation: modalFadeUp 0.4s ease;
 }
 
 .contact-modal__close {
@@ -224,13 +224,13 @@ strong {
 
 .contact-form {
   display: grid;
-  gap: 16px;
+  gap: 12px;
 }
 
 .contact-form__group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .contact-form__group label {
@@ -245,7 +245,7 @@ strong {
   width: 100%;
   border: 1px solid #d9d9d9;
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 12px 14px;
   font-size: 1rem;
   outline: none;
   transition:
@@ -263,7 +263,7 @@ strong {
 
 .contact-form__footer {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .contact-form__submit {
@@ -769,14 +769,15 @@ nav a:hover {
   min-height: 82px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   padding: 18px 0;
 }
 
 .footer-title {
-  font-weight: 800;
-  color: var(--text);
+  width: 120px;
+  margin: auto;
+  padding: auto;
 }
 
 .footer p {
@@ -978,7 +979,9 @@ body.modal-open {
 
   .footer-wrap {
     flex-direction: column;
-    justify-content: center;
     text-align: center;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
   }
 }
