@@ -26,10 +26,12 @@ html {
 }
 
 body {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family:
+    "Inter", Arial, Helvetica, sans-serif, Poppins, "Barlow Condensed",
+    sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -309,14 +311,14 @@ body.modal-open {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.94);
+  z-index: 100;
+  background: var(--bg-dark);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .header-wrap {
-  min-height: 80px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -373,7 +375,7 @@ body.modal-open {
 }
 
 .nav a {
-  color: #475569;
+  color: var(--bg-soft);
   font-size: 0.95rem;
   font-weight: 500;
 }
