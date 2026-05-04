@@ -14,7 +14,7 @@
         content="criação de sites profissionais, desenvolvimento de sites, landing page profissional, site institucional, criação de site para empresa, agência de sites, SEO para sites, devlab" />
     <meta name="author" content="devlab" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#000000" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://www.devlabdigital.com.br/" />
 
@@ -38,9 +38,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" />
+    <noscript>
+        <style>
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
 
     <script type="application/ld+json">
       {
@@ -60,7 +68,7 @@
           "addressCountry": "BR"
         },
         "areaServed": "Brasil",
-        "priceRange": "$$"
+        "priceRange": "$$",
         "sameAs": [
           "https://www.instagram.com/devlabdigital",
           "https://www.linkedin.com/company/devlab-sites-profissionais/"
@@ -83,474 +91,608 @@
           },
           {
             "@type": "Question",
-            "name": "O site funciona bem no celular?",
+            "name": "O site vai aparecer no Google?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim. Todos os projetos da devlab são desenvolvidos com foco em responsividade e boa experiência em celulares, tablets e desktops."
+              "text": "O site será entregue com base técnica e semântica preparada para indexação. O crescimento orgânico depende também de conteúdo, autoridade e continuidade de SEO."
             }
           },
           {
             "@type": "Question",
-            "name": "Vocês fazem sites com SEO?",
+            "name": "Vocês fazem site responsivo?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim. A estrutura do site já é planejada com boas práticas de SEO técnico, semântico e de conteúdo para melhorar a presença orgânica no Google."
+              "text": "Sim. Todos os projetos são pensados para funcionar com qualidade em celular, tablet e computador."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Posso usar o site para anúncios?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. A estrutura da página é planejada para apoiar campanhas de tráfego pago, captação de leads e conversão comercial."
             }
           }
         ]
       }
     </script>
-
-
 </head>
 
 <body>
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-    <header class="site-header" id="topo">
-        <div class="container header-wrap">
-            <a href="#topo" class="brand" aria-label="Ir para o topo do site devlab" id="logoTop">
-                <div class="brand-img">
-                    <img src="./assets/logo/devlabdigital-bg-wt.png" alt="devlab" />
-                </div>
+    <header class="nav-header" id="topo">
+        <div class="nav-container">
+            <a href="#topo" class="nav-brand" aria-label="devlab - página inicial" id="logoTop">
+                <img src="./assets/logo/devlabdigital-bg-bl.png" alt="devlab" class="nav-logo" />
             </a>
 
-            <nav class="nav" id="mainNav" aria-label="Navegação principal">
+            <nav class="nav-links" id="mainNav" aria-label="Navegação principal">
                 <a href="#servicos">Serviços</a>
                 <a href="#processo">Processo</a>
-                <a href="#beneficios">Benefícios</a>
+                <a href="#resultados">Resultados</a>
                 <a href="#planos">Planos</a>
                 <a href="#faq">FAQ</a>
-                <a href="#contato">Contato</a>
             </nav>
 
-            <a class="btn btn-secondary header-cta"
+            <a class="nav-cta"
                 href="https://wa.me/5585981066622?text=Olá%20devlab,%20quero%20criar%20um%20site%20profissional"
-                target="_blank" rel="noopener noreferrer" aria-label="Solicitar proposta pelo WhatsApp">
+                target="_blank" rel="noopener noreferrer">
                 Solicitar proposta
             </a>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"
+            <button class="nav-menu-btn" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"
                 aria-controls="mainNav">
-                Menu
+                <span></span>
+                <span></span>
             </button>
         </div>
     </header>
 
-    <main id="conteudo">
-        <section class="hero section">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <h1>Criação de sites profissionais para empresas que querem vender mais.</h1>
-                    <p class="hero-description">
-                        A <strong>devlab</strong> desenvolve sites institucionais, landing pages e páginas de alta
-                        conversão com foco em performance, SEO avançado, autoridade digital e geração de oportunidades
-                        reais.
-                    </p>
-
+    <main id="main">
+        <section class="hero">
+            <div class="hero-media">
+                <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80">
+                    <source src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-city-at-night-2586/1080p.mp4" type="video/mp4" />
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content reveal">
+                    <span class="hero-badge">Web Design & Desenvolvimento</span>
+                    <h1>Sites que fazem<br />sua empresa<br /><span class="gradient-text">vender mais.</span></h1>
+                    <p class="hero-sub">A devlab cria sites institucionais, landing pages e páginas de alta conversão
+                        com design premium, SEO avançado e foco em resultados reais.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary"
+                        <a class="btn btn-filled"
                             href="https://wa.me/5585981066622?text=Olá%20devlab,%20quero%20criar%20um%20site%20profissional"
                             target="_blank" rel="noopener noreferrer">
-                            Quero meu site profissional
+                            Começar agora
                         </a>
-                        <a class="btn btn-secondary" href="#planos">Ver soluções</a>
+                        <a class="btn btn-ghost" href="#planos">Ver planos</a>
                     </div>
-
-                    <ul class="feature-grid" aria-label="Diferenciais da devlab">
-                        <li class="feature-box">Layout responsivo e premium</li>
-                        <li class="feature-box">Estrutura otimizada para SEO</li>
-                        <li class="feature-box">CTA forte para geração de leads</li>
-                        <li class="feature-box">Base ideal para tráfego pago</li>
-                    </ul>
                 </div>
 
-                <aside class="hero-card" aria-label="Resumo estratégico da devlab">
-                    <div class="hero-card-top">
-                        <p class="eyebrow eyebrow-light">devlab</p>
-                        <h2>Sites modernos que fortalecem sua marca e aumentam sua presença no Google.</h2>
-                        <p>
-                            Estrutura profissional para empresas que querem credibilidade, melhor posicionamento
-                            orgânico e mais contatos qualificados.
+                <div class="hero-stats reveal" style="transition-delay: 0.15s;">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Responsivo</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">SEO</span>
+                        <span class="stat-label">Otimizado</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">No ar</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="marquee-section">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span>Landing Pages</span>
+                    <span class="marquee-dot"></span>
+                    <span>Sites Institucionais</span>
+                    <span class="marquee-dot"></span>
+                    <span>SEO Avançado</span>
+                    <span class="marquee-dot"></span>
+                    <span>Alta Conversão</span>
+                    <span class="marquee-dot"></span>
+                    <span>Design Premium</span>
+                    <span class="marquee-dot"></span>
+                    <span>Performance</span>
+                    <span class="marquee-dot"></span>
+                </div>
+                <div class="marquee-track" aria-hidden="true">
+                    <span>Landing Pages</span>
+                    <span class="marquee-dot"></span>
+                    <span>Sites Institucionais</span>
+                    <span class="marquee-dot"></span>
+                    <span>SEO Avançado</span>
+                    <span class="marquee-dot"></span>
+                    <span>Alta Conversão</span>
+                    <span class="marquee-dot"></span>
+                    <span>Design Premium</span>
+                    <span class="marquee-dot"></span>
+                    <span>Performance</span>
+                    <span class="marquee-dot"></span>
+                </div>
+                <div class="marquee-track" aria-hidden="true">
+                    <span>Landing Pages</span>
+                    <span class="marquee-dot"></span>
+                    <span>Sites Institucionais</span>
+                    <span class="marquee-dot"></span>
+                    <span>SEO Avançado</span>
+                    <span class="marquee-dot"></span>
+                    <span>Alta Conversão</span>
+                    <span class="marquee-dot"></span>
+                    <span>Design Premium</span>
+                    <span class="marquee-dot"></span>
+                    <span>Performance</span>
+                    <span class="marquee-dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-services" id="servicos">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Serviços</span>
+                    <h2>Soluções digitais para empresas que levam seu negócio a sério.</h2>
+                </div>
+
+                <div class="bento-grid">
+                    <article class="bento-card bento-large reveal" style="transition-delay: 0.1s;">
+                        <div class="bento-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8M12 17v4" />
+                            </svg>
+                        </div>
+                        <h3>Landing Pages Profissionais</h3>
+                        <p>Páginas focadas em conversão para campanhas, anúncios, lançamentos e captação de leads
+                            qualificados.</p>
+                        <ul class="bento-features">
+                            <li>Copy persuasiva</li>
+                            <li>Design de alta conversão</li>
+                            <li>CTA estratégico</li>
+                        </ul>
+                    </article>
+
+                    <article class="bento-card bento-tall reveal" style="transition-delay: 0.2s;">
+                        <div class="bento-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                        </div>
+                        <h3>Sites Institucionais</h3>
+                        <p>Sites completos para transmitir autoridade, ganhar visibilidade no Google e gerar contatos
+                            qualificados para sua empresa.</p>
+                        <ul class="bento-features">
+                            <li>Até 5 páginas</li>
+                            <li>Arquitetura SEO</li>
+                            <li>Design exclusivo</li>
+                        </ul>
+                    </article>
+
+                    <article class="bento-card reveal" style="transition-delay: 0.3s;">
+                        <div class="bento-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="M21 21l-4.35-4.35" />
+                                <path d="M11 8v6M8 11h6" />
+                            </svg>
+                        </div>
+                        <h3>SEO On-Page</h3>
+                        <p>Estrutura semântica, meta tags estratégicas e performance otimizada para crescimento
+                            orgânico.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark section-process" id="processo">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label section-label-light">Processo</span>
+                    <h2>Do diagnóstico à publicação em 4 etapas.</h2>
+                    <p class="section-desc">Um processo claro e estratégico para entregar um site profissional, rápido e
+                        pronto para crescer.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-step reveal" style="transition-delay: 0.1s;">
+                        <span class="process-num">01</span>
+                        <h3>Diagnóstico</h3>
+                        <p>Entendemos sua empresa, público-alvo, palavras-chave e objetivos comerciais do projeto.</p>
+                    </div>
+                    <div class="process-connector"></div>
+                    <div class="process-step reveal" style="transition-delay: 0.2s;">
+                        <span class="process-num">02</span>
+                        <h3>Arquitetura</h3>
+                        <p>Definimos estrutura, hierarquia de informações, CTAs e direcionamento de conteúdo para SEO.
                         </p>
                     </div>
-
-                    <div class="hero-card-grid">
-                        <div class="mini-box">
-                            <span>Especialidade</span>
-                            <strong>Sites e landing pages</strong>
-                        </div>
-                        <div class="mini-box">
-                            <span>Objetivo</span>
-                            <strong>Conversão e autoridade</strong>
-                        </div>
-                        <div class="mini-box">
-                            <span>SEO</span>
-                            <strong>On-page e técnico</strong>
-                        </div>
-                        <div class="mini-box">
-                            <span>Atendimento</span>
-                            <strong>Fortaleza e Brasil</strong>
-                        </div>
+                    <div class="process-connector"></div>
+                    <div class="process-step reveal" style="transition-delay: 0.3s;">
+                        <span class="process-num">03</span>
+                        <h3>Design & Dev</h3>
+                        <p>Construímos layout moderno com código limpo, responsivo, acessível e otimizado.</p>
                     </div>
-                </aside>
-            </div>
-        </section>
-
-        <section class="section" id="servicos">
-            <div class="container">
-                <div class="section-title">
-                    <p class="eyebrow">Serviços</p>
-                    <h2>Serviços de criação de sites e páginas estratégicas para empresas</h2>
-                    <p>
-                        Desenvolvemos soluções digitais para empresas, profissionais liberais, clínicas, escritórios,
-                        comércios e marcas que precisam de presença online forte e profissional.
-                    </p>
-                </div>
-
-                <div class="cards-grid cards-grid-3">
-                    <article class="card">
-                        <div class="card-index">01</div>
-                        <h3>Landing pages profissionais</h3>
-                        <p>Páginas focadas em conversão para campanhas, anúncios, lançamentos, captação de leads e
-                            apresentação de serviços.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-index">02</div>
-                        <h3>Sites institucionais</h3>
-                        <p>Sites completos para empresas que precisam transmitir autoridade, apresentar soluções, ganhar
-                            visibilidade no Google e gerar contatos.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-index">03</div>
-                        <h3>Otimização SEO on-page</h3>
-                        <p>Estrutura semântica, títulos estratégicos, meta tags, performance, schema markup e base
-                            técnica sólida para crescimento orgânico.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="processo">
-            <div class="container">
-                <div class="section-title">
-                    <p class="eyebrow">Processo</p>
-                    <h2>Como funciona o desenvolvimento do seu site com a devlab</h2>
-                    <p>
-                        Nosso processo une estratégia, design, desenvolvimento e SEO para entregar um site profissional,
-                        rápido e pronto para crescer.
-                    </p>
-                </div>
-
-                <div class="cards-grid cards-grid-4">
-                    <article class="card">
-                        <div class="card-index">01</div>
-                        <h3>Diagnóstico do negócio</h3>
-                        <p>Entendimento da empresa, do público, das palavras-chave e dos objetivos comerciais do
-                            projeto.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-index">02</div>
-                        <h3>Arquitetura e conteúdo</h3>
-                        <p>Definição da estrutura, hierarquia das informações, CTAs, seções e direcionamento de conteúdo
-                            para SEO e conversão.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-index">03</div>
-                        <h3>Design e desenvolvimento</h3>
-                        <p>Construção de layout moderno, código limpo, responsivo, acessível e otimizado para
-                            desempenho.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-index">04</div>
-                        <h3>Publicação e evolução</h3>
-                        <p>Entrega do site com base pronta para indexação, campanhas, melhorias contínuas e expansão
-                            futura.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section dark-section" id="beneficios">
-            <div class="container benefits-wrap">
-                <div>
-                    <p class="eyebrow">Benefícios</p>
-                    <h2>Por que investir em um site profissional com SEO forte</h2>
-                    <p>
-                        Um site profissional bem estruturado melhora sua autoridade, aumenta sua visibilidade e cria uma
-                        base confiável para atrair clientes no orgânico e no tráfego pago.
-                    </p>
-                </div>
-
-                <div class="benefits-grid">
-                    <div class="dark-card">Mais credibilidade para a marca</div>
-                    <div class="dark-card">Melhor presença no Google</div>
-                    <div class="dark-card">Experiência superior no celular</div>
-                    <div class="dark-card">Mais chance de conversão</div>
-                    <div class="dark-card">Base pronta para anúncios</div>
-                    <div class="dark-card">Estrutura pensada para crescimento</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="depoimentos">
-            <div class="container">
-                <div class="testimonials-head">
-                    <div class="section-title no-margin">
-                        <p class="eyebrow">Depoimentos</p>
-                        <h2>Empresas valorizam sites claros, rápidos e estratégicos</h2>
+                    <div class="process-connector"></div>
+                    <div class="process-step reveal" style="transition-delay: 0.4s;">
+                        <span class="process-num">04</span>
+                        <h3>Publicação</h3>
+                        <p>Entregamos o site pronto para indexação, campanhas e expansão futura.</p>
+                        <div class="process-connector"></div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <p class="section-side-text">
-                        Um bom site reduz fricção, transmite confiança e ajuda o visitante a entender o valor da sua
-                        empresa mais rapidamente.
-                    </p>
+        <section class="section section-metrics" id="resultados">
+            <div class="container">
+                <div class="metrics-grid reveal">
+                    <div class="metric-card">
+                        <span class="metric-value">+3x</span>
+                        <span class="metric-label">Mais credibilidade com site profissional</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">85%</span>
+                        <span class="metric-label">Dos consumidores pesquisam online antes de comprar</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">75%</span>
+                        <span class="metric-label">Julgam a credibilidade da empresa pelo site</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">24/7</span>
+                        <span class="metric-label">Seu site trabalhando por você, todos os dias</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark section-testimonials" id="depoimentos">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label section-label-light">Depoimentos</span>
+                    <h2>Quem investe em um site profissional<br />colhe resultados.</h2>
                 </div>
 
-                <div class="testimonials-grid">
-                    <article class="testimonial-card">
-                        <a href="https://ctvieirabrothers.vercel.app" target="_blank" rel="noopener noreferrer"
-                            class="testimonial-link">
-                            <div class="testimonial-client">
-                                <div class="testimonial-logo-wrap">
-                                    <img src="./assets/img/empresa/logo_ct_vieira.png" alt="Logo CT Vieira Brothers"
-                                        class="testimonial-logo" />
-                                </div>
-
-                                <div class="testimonial-client-info">
-                                    <strong>Alysson Bruno</strong>
-                                    <small>CT Vieira Brothers</small>
-                                </div>
+                <div class="testimonials-scroll">
+                    <article class="testimonial-card reveal" style="transition-delay: 0.1s;">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">A presença do nosso Centro de Treinamento ficou muito mais
+                            profissional e começamos a receber contatos mais qualificados.</p>
+                        <div class="testimonial-author">
+                            <div class="author-logo">
+                                <img src="./assets/img/empresa/logo_ct_vieira.png" alt="CT Vieira Brothers" />
                             </div>
-
-                            <p>
-                                “A presença do nosso Centro de Treinamento ficou muito mais profissional e começamos a
-                                receber contatos mais qualificados.”
-                            </p>
-                        </a>
+                            <div class="author-info">
+                                <strong>Alysson Bruno</strong>
+                                <span>CT Vieira Brothers</span>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="testimonial-card">
-                        <a href="https://bushibelts.vercel.app/" target="_blank" rel="noopener noreferrer"
-                            class="testimonial-link">
-                            <div class="testimonial-client">
-                                <div class="testimonial-logo-wrap">
-                                    <img src="./assets/img/empresa/bushi-belts.png" alt="Logo Consultoria Empresarial"
-                                        class="testimonial-logo" />
-                                </div>
-
-                                <div class="testimonial-client-info">
-                                    <strong>Carlos Henrique</strong>
-                                    <small>Bushi Belts - Faixas Premium</small>
-                                </div>
+                    <article class="testimonial-card reveal" style="transition-delay: 0.2s;">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">O site trouxe mais credibilidade para a nossa marca e melhorou a
+                            percepção do cliente desde o primeiro acesso. A navegação é muito intuitiva e o fechamento
+                            de vendas aumentou exponencialmente.</p>
+                        <div class="testimonial-author">
+                            <div class="author-logo">
+                                <img src="./assets/img/empresa/bushi-belts.png" alt="Bushi Belts" />
                             </div>
-
-                            <p>
-                                “O site trouxe mais credibilidade para a nossa marca e melhorou a percepção do cliente
-                                desde o primeiro acesso, a navegação se é muito intuitiva, e o fechamento de vendas
-                                aumentou exponencialmente.”
-                            </p>
-                        </a>
+                            <div class="author-info">
+                                <strong>Carlos Henrique</strong>
+                                <span>Bushi Belts</span>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="testimonial-card">
-                        <a href="https://site-do-cliente-3.com.br" target="_blank" rel="noopener noreferrer"
-                            class="testimonial-link">
-                            <div class="testimonial-client">
-                                <div class="testimonial-logo-wrap">
-                                    <img src="./assets/img/empresa/logo_fernanda_rocha_adv.png"
-                                        alt="Logo Escritório Jurídico" class="testimonial-logo" />
-                                </div>
-
-                                <div class="testimonial-client-info">
-                                    <strong>Fernanda Rocha</strong>
-                                    <small>Escritório Jurídico</small>
-                                </div>
+                    <article class="testimonial-card reveal" style="transition-delay: 0.3s;">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">A página ficou elegante, rápida e muito mais alinhada com o
+                            posicionamento que queríamos no mercado.</p>
+                        <div class="testimonial-author">
+                            <div class="author-logo">
+                                <img src="./assets/img/empresa/logo_fernanda_rocha_adv.png" alt="Fernanda Rocha Adv" />
                             </div>
-
-                            <p>
-                                “A página ficou elegante, rápida e muito mais alinhada com o posicionamento que
-                                queríamos no mercado.”
-                            </p>
-                        </a>
+                            <div class="author-info">
+                                <strong>Fernanda Rocha</strong>
+                                <span>Escritório Jurídico</span>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
-        <section class="section plans-section" id="planos">
+
+        <section class="section section-plans" id="planos">
             <div class="container">
-                <div class="section-title">
-                    <p class="eyebrow">Planos</p>
-                    <h2>Soluções de criação de site para diferentes momentos do seu negócio</h2>
-                    <p>
-                        A devlab oferece formatos ideais tanto para quem quer começar com uma landing page profissional
-                        quanto para quem precisa de um site institucional completo.
-                    </p>
+                <div class="section-header section-header-center reveal">
+                    <span class="section-label">Planos</span>
+                    <h2>Investimento claro.<br />Resultados reais.</h2>
+                    <p class="section-desc">Formatos ideais para quem quer começar com uma landing page ou construir um
+                        site institucional completo.</p>
                 </div>
 
                 <div class="plans-grid">
-                    <article class="plan-card">
-                        <div class="plan-top">
-                            <h3>Landing Page Profissional</h3>
-                            <span class="badge">Conversão rápida</span>
+                    <article class="plan-card reveal" style="transition-delay: 0.1s;">
+                        <div class="plan-header">
+                            <h3>Landing Page</h3>
+                            <p>Conversão rápida para campanhas</p>
                         </div>
-                        <div class="price">R$ 897</div>
-                        <p>Ideal para campanhas de tráfego pago, apresentação de serviços e captação de leads.</p>
-                        <ul class="feature-list">
-                            <li>Página única com foco comercial</li>
-                            <li>Estrutura de copy persuasiva</li>
-                            <li>Design responsivo</li>
-                            <li>Botão de WhatsApp e CTA forte</li>
-                            <li>SEO básico on-page</li>
+                        <div class="plan-price">
+                            <span class="price-currency">R$</span>
+                            <span class="price-value">897</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Página única com foco comercial
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Copy persuasiva e estratégica
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Design responsivo premium
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                WhatsApp e CTA otimizados
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                SEO on-page básico
+                            </li>
                         </ul>
-                        <a class="btn btn-primary"
+                        <a class="btn btn-outline btn-full"
                             href="https://wa.me/5585981066622?text=Olá%20devlab,%20tenho%20interesse%20na%20Landing%20Page"
-                            target="_blank" rel="noopener noreferrer">Solicitar este plano</a>
+                            target="_blank" rel="noopener noreferrer">
+                            Solicitar este plano
+                        </a>
                     </article>
 
-                    <article class="plan-card">
-                        <div class="plan-top">
-                            <h3>Site Institucional Profissional</h3>
-                            <span class="badge">Mais completo</span>
+                    <article class="plan-card plan-featured reveal" style="transition-delay: 0.2s;">
+                        <div class="plan-badge">Mais completo</div>
+                        <div class="plan-header">
+                            <h3>Site Institucional</h3>
+                            <p>Presença digital sólida e profissional</p>
                         </div>
-                        <div class="price">R$ 1.497</div>
-                        <p>Ideal para empresas que querem mais autoridade, presença orgânica e estrutura digital sólida.
-                        </p>
-                        <ul class="feature-list">
-                            <li>Até 5 páginas estratégicas</li>
-                            <li>Arquitetura semântica para SEO</li>
-                            <li>Design profissional personalizado</li>
-                            <li>Base para expansão de conteúdo</li>
-                            <li>Melhor suporte à indexação no Google</li>
+                        <div class="plan-price">
+                            <span class="price-currency">R$</span>
+                            <span class="price-value">1.497</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Até 5 páginas estratégicas
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Arquitetura semântica para SEO
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Design personalizado exclusivo
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Base para expansão de conteúdo
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Otimização para indexação Google
+                            </li>
                         </ul>
-                        <a class="btn btn-primary"
+                        <a class="btn btn-filled btn-full"
                             href="https://wa.me/5585981066622?text=Olá%20devlab,%20tenho%20interesse%20no%20Site%20Institucional"
-                            target="_blank" rel="noopener noreferrer">Solicitar este plano</a>
+                            target="_blank" rel="noopener noreferrer">
+                            Solicitar este plano
+                        </a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section faq-section" id="faq">
+        <section class="section section-faq" id="faq">
             <div class="container">
-                <div class="section-title center">
-                    <p class="eyebrow">FAQ</p>
-                    <h2>Perguntas frequentes sobre criação de sites profissionais</h2>
-                    <p>
-                        Respostas rápidas para ajudar você a entender como a devlab estrutura seus projetos digitais.
-                    </p>
+                <div class="section-header section-header-center reveal">
+                    <span class="section-label">FAQ</span>
+                    <h2>Perguntas frequentes</h2>
                 </div>
 
-                <div class="faq-grid">
-                    <details class="faq-item">
-                        <summary>Em quanto tempo o site pode ficar pronto?</summary>
-                        <p>O prazo varia conforme o escopo, mas landing pages costumam ter entrega mais rápida do que
-                            sites institucionais com múltiplas páginas.</p>
+                <div class="faq-list">
+                    <details class="faq-item reveal" style="transition-delay: 0.1s;">
+                        <summary>
+                            <span>Em quanto tempo o site fica pronto?</span>
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>O prazo varia conforme o escopo. Landing pages costumam ter entrega mais rápida que sites
+                                institucionais com múltiplas páginas. Definimos juntos o cronograma ideal.</p>
+                        </div>
                     </details>
-                    <details class="faq-item">
-                        <summary>O site vai aparecer no Google?</summary>
-                        <p>O site será entregue com base técnica e semântica preparada para indexação. O crescimento
-                            orgânico depende também de conteúdo, autoridade e continuidade de SEO.</p>
+
+                    <details class="faq-item reveal" style="transition-delay: 0.15s;">
+                        <summary>
+                            <span>O site vai aparecer no Google?</span>
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>O site é entregue com base técnica e semântica preparada para indexação. O crescimento
+                                orgânico depende também de conteúdo, autoridade e continuidade de SEO.</p>
+                        </div>
                     </details>
-                    <details class="faq-item">
-                        <summary>Vocês fazem site responsivo?</summary>
-                        <p>Sim. Todos os projetos são pensados para funcionar com qualidade em celular, tablet e
-                            computador.</p>
+
+                    <details class="faq-item reveal" style="transition-delay: 0.2s;">
+                        <summary>
+                            <span>Vocês fazem site responsivo?</span>
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sim. Todos os projetos são pensados e testados para funcionar com excelência em celular,
+                                tablet e computador.</p>
+                        </div>
                     </details>
-                    <details class="faq-item">
-                        <summary>Posso usar o site para anúncios?</summary>
-                        <p>Sim. A estrutura da página é planejada para apoiar campanhas de tráfego pago, captação de
-                            leads e conversão comercial.</p>
+
+                    <details class="faq-item reveal" style="transition-delay: 0.25s;">
+                        <summary>
+                            <span>Posso usar o site para anúncios?</span>
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sim. A estrutura é planejada para apoiar campanhas de tráfego pago, captação de leads e
+                                conversão comercial.</p>
+                        </div>
                     </details>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="contato">
+        <section class="section section-cta" id="contato">
             <div class="container">
-                <div class="cta-box">
-                    <div>
-                        <p class="eyebrow eyebrow-light">Pronto para começar?</p>
-                        <h2>Tire sua empresa do improviso com um site profissional da devlab.</h2>
-                        <p>
-                            Receba uma proposta clara, estratégica e pensada para posicionar sua empresa com mais
-                            autoridade digital e mais oportunidades de negócio.
-                        </p>
+                <div class="cta-container reveal">
+                    <div class="cta-content">
+                        <span class="section-label section-label-light">Pronto para começar?</span>
+                        <h2>Tire sua empresa do improviso com um site profissional.</h2>
+                        <p>Receba uma proposta estratégica pensada para posicionar sua empresa com mais autoridade
+                            digital.</p>
                     </div>
-
                     <div class="cta-actions">
-                        <a class="btn btn-light"
+                        <a class="btn btn-filled btn-white"
                             href="https://wa.me/5585981066622?text=Olá%20devlab,%20quero%20solicitar%20uma%20proposta"
-                            id="callWhatsApp" target="_blank" rel="noopener noreferrer">
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
                             Chamar no WhatsApp
                         </a>
-
-                        <button class="btn btn-light" type="button" id="openContactModal">
+                        <button class="btn btn-ghost btn-ghost-light" type="button" id="openContactModal">
                             Enviar e-mail
                         </button>
                     </div>
                 </div>
             </div>
         </section>
-
-
     </main>
 
-    <footer class="footer" id="topo">
-        <div class="container footer-wrap">
-            <div>
-                <p>© 2026 devlab. Todos os direitos
-                    reservados.</p>
+    <footer class="footer" id="rodape">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="./assets/logo/devlabdigital-bg-bl.png" alt="devlab" class="footer-logo" />
+                <p>Sites profissionais para empresas que querem crescer no digital.</p>
             </div>
-        </div>
-        <div>
-            <a href="#topo" class="brand" aria-label="Ir para o topo do site devlab" id="logoTop">
-                <img src="./assets/logo/devlabdigital-bg-bl.png" alt="devlab" class="footer-title" id="topo">
-            </a>
+            <div class="footer-links">
+                <a href="#servicos">Serviços</a>
+                <a href="#processo">Processo</a>
+                <a href="#planos">Planos</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 devlab. Todos os direitos reservados.</p>
+                <p>Fortaleza, CE — Brasil</p>
+            </div>
         </div>
     </footer>
 
-    <script src="./js/main.js" defer></script>
-
-
-    <div class="contact-modal" id="contactModal" aria-hidden="true">
-        <div class="contact-modal__overlay" id="contactModalOverlay"></div>
-
-        <div class="contact-modal__content" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
-            <button class="contact-modal__close" type="button" id="closeContactModal" aria-label="Fechar formulário">
-                ×
+    <div class="modal" id="contactModal" aria-hidden="true">
+        <div class="modal-overlay" id="contactModalOverlay"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+            <button class="modal-close" type="button" id="closeContactModal" aria-label="Fechar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
             </button>
 
             <h3 id="contactModalTitle">Solicitar proposta</h3>
-            <p class="contact-modal__subtitle">
-                Preencha os dados e eu recebo tudo no e-mail.
-            </p>
+            <p class="modal-subtitle">Preencha os dados e retorno em breve.</p>
 
-            <form class="contact-form" id="contactForm">
-                <input type="text" name="website" id="website" autocomplete="off" tabindex="-1"
-                    class="contact-form__honeypot" />
+            <form class="form" id="contactForm">
+                <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" class="form-honeypot" />
 
-                <div class="contact-form__group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" placeholder="Seu nome" required />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" name="company" placeholder="Nome da empresa" />
+                    </div>
                 </div>
 
-                <div class="contact-form__group">
-                    <label for="company">Empresa</label>
-                    <input type="text" id="company" name="company" placeholder="Nome da empresa" />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Telefone / WhatsApp</label>
+                        <input type="text" id="phone" name="phone" placeholder="(85) 99999-9999" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+                    </div>
                 </div>
 
-                <div class="contact-form__group">
-                    <label for="phone">Telefone / WhatsApp</label>
-                    <input type="text" id="phone" name="phone" placeholder="(85) 99999-9999" required />
-                </div>
-
-                <div class="contact-form__group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="contato@devlabdigital.com.br" required />
-                </div>
-
-                <div class="contact-form__group">
+                <div class="form-group">
                     <label for="service">Serviço de interesse</label>
                     <select id="service" name="service">
                         <option value="">Selecione</option>
@@ -563,21 +705,23 @@
                     </select>
                 </div>
 
-                <div class="contact-form__group">
+                <div class="form-group">
                     <label for="message">Mensagem</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Descreva o que você precisa"
+                    <textarea id="message" name="message" rows="4" placeholder="Descreva o que você precisa"
                         required></textarea>
                 </div>
 
-                <div class="contact-form__footer">
-                    <p class="contact-form__status" id="contactFormStatus"></p>
-                    <button class="btn btn-primary contact-form__submit" id="contactFormSubmit" type="submit">
+                <div class="form-footer">
+                    <p class="form-status" id="contactFormStatus"></p>
+                    <button class="btn btn-filled btn-full" id="contactFormSubmit" type="submit">
                         Enviar solicitação
                     </button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>

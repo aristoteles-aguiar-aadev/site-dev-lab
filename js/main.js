@@ -1,6 +1,7 @@
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 const logoTop = document.getElementById("logoTop");
+const navHeader = document.querySelector(".nav-header");
 
 if (logoTop) {
     logoTop.addEventListener("click", (event) => {
@@ -16,12 +17,14 @@ if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", () => {
         const isOpen = mainNav.classList.toggle("mobile-open");
         menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.classList.toggle("active", isOpen);
     });
 
     document.querySelectorAll("#mainNav a").forEach((link) => {
         link.addEventListener("click", () => {
             mainNav.classList.remove("mobile-open");
             menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.classList.remove("active");
         });
     });
 
@@ -32,8 +35,25 @@ if (menuToggle && mainNav) {
         if (clickedOutside) {
             mainNav.classList.remove("mobile-open");
             menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.classList.remove("active");
         }
     });
+}
+
+if (navHeader) {
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > 50) {
+            navHeader.classList.add("scrolled");
+        } else {
+            navHeader.classList.remove("scrolled");
+        }
+
+        lastScroll = currentScroll;
+    }, { passive: true });
 }
 
 const contactModal = document.getElementById("contactModal");
@@ -66,7 +86,7 @@ function setStatus(message, type) {
     if (!contactFormStatus) return;
 
     contactFormStatus.textContent = message;
-    contactFormStatus.className = "contact-form__status";
+    contactFormStatus.className = "form-status";
 
     if (type) {
         contactFormStatus.classList.add(type === "error" ? "is-error" : "is-success");
@@ -77,7 +97,7 @@ function clearStatus() {
     if (!contactFormStatus) return;
 
     contactFormStatus.textContent = "";
-    contactFormStatus.className = "contact-form__status";
+    contactFormStatus.className = "form-status";
 }
 
 function setLoading(isLoading) {
@@ -161,13 +181,6 @@ if (contactForm) {
                 body: JSON.stringify(payload)
             });
 
-            /* const result = await response.json();
-
-            if (!response.ok || !result.ok) {
-                throw new Error(result.message || "Não foi possível enviar sua mensagem.");
-            } */
-
-            /* INICIO DE TESTE */
             let result = null;
             const contentType = response.headers.get("content-type") || "";
 
@@ -181,7 +194,6 @@ if (contactForm) {
             if (!response.ok || !result.ok) {
                 throw new Error(result.message || "Não foi possível enviar sua mensagem.");
             }
-            /* FIM DE TESTE */
 
             setStatus("Mensagem enviada com sucesso. Em breve entrarei em contato.", "success");
             contactForm.reset();
@@ -195,4 +207,23 @@ if (contactForm) {
             setLoading(false);
         }
     });
+}
+
+/* Scroll Reveal */
+if ("IntersectionObserver" in window) {
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -60px 0px"
+    });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
 }
